@@ -22,53 +22,124 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **CSS Modules** - Component-scoped styles
 
 ## 📁 Project Structure
-src/
-├── components/
-│   ├── animations/
-│   │   ├── AnimatedBackground.tsx
-│   │   └── OrbAnimation.tsx
-│   ├── cards/
-│   │   ├── ProjectCard.tsx
-│   │   ├── SkillCard.tsx
-│   │   ├── StatCard.tsx
-│   │   ├── TestimonialCard.tsx
-│   │   └── ToolCard.tsx
-│   ├── layout/
-│   │   ├── Footer.tsx
-│   │   ├── Layout.tsx
-│   │   └── Navbar.tsx
-│   ├── sections/
-│   │   ├── About.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Projects.tsx
-│   │   ├── Skills.tsx
-│   │   ├── Testimonials.tsx
-│   │   └── Tools.tsx
-│   └── ui/
-│       ├── Button.tsx
-│       ├── CustomCursor.tsx
-│       ├── GradientText.tsx
-│       ├── ScrollReveal.tsx
-│       └── SectionHeader.tsx
-├── data/
-│   ├── types.ts
-│   ├── data.ts
-│   ├── projects.ts
-│   ├── skills.ts
-│   └── testimonials.ts
-├── hooks/
-│   ├── useMousePosition.ts
-│   ├── useParallax.ts
-│   ├── useScrollReveal.ts
-│   └── useSkillBars.ts
-├── styles/
-│   ├── variables.css
-│   ├── globals.css
-│   └── animations.css
-├── utils/
-│   ├── constants.ts
-│   └── helpers.ts
-├── App.tsx
-├── main.tsx
-└── index.css
+🎯 Files to Create (List Format)
+
+Root files:
+
+    .gitignore
+
+    index.html
+
+    package.json
+
+    README.md
+
+    tsconfig.json
+
+    tsconfig.node.json
+
+    vite.config.ts
+
+Public folder:
+
+    public/videos/ (put your .mp4 files here)
+
+Src folder:
+
+    src/App.tsx
+
+    src/main.tsx
+
+    src/index.css
+
+Components - Animations:
+
+    src/components/animations/AnimatedBackground.tsx
+
+    src/components/animations/OrbAnimation.tsx
+
+Components - Cards:
+
+    src/components/cards/ProjectCard.tsx
+
+    src/components/cards/SkillCard.tsx
+
+    src/components/cards/StatCard.tsx
+
+    src/components/cards/TestimonialCard.tsx
+
+    src/components/cards/ToolCard.tsx
+
+Components - Layout:
+
+    src/components/layout/Footer.tsx
+
+    src/components/layout/Layout.tsx
+
+    src/components/layout/Navbar.tsx
+
+Components - Sections:
+
+    src/components/sections/About.tsx
+
+    src/components/sections/Contact.tsx
+
+    src/components/sections/Hero.tsx
+
+    src/components/sections/Projects.tsx
+
+    src/components/sections/Skills.tsx
+
+    src/components/sections/Testimonials.tsx
+
+    src/components/sections/Tools.tsx
+
+Components - UI:
+
+    src/components/ui/Button.tsx
+
+    src/components/ui/CustomCursor.tsx
+
+    src/components/ui/GradientText.tsx
+
+    src/components/ui/ScrollReveal.tsx
+
+    src/components/ui/SectionHeader.tsx
+
+Data files:
+
+    src/data/data.ts
+
+    src/data/projects.ts
+
+    src/data/skills.ts
+
+    src/data/testimonials.ts
+
+    src/data/types.ts
+
+Hooks:
+
+    src/hooks/useMousePosition.ts
+
+    src/hooks/useParallax.ts
+
+    src/hooks/useScrollReveal.ts
+
+    src/hooks/useSkillBars.ts
+
+Styles:
+
+    src/styles/animations.css
+
+    src/styles/globals.css
+
+    src/styles/variables.css
+
+Utils:
+
+    src/utils/constants.ts
+
+    src/utils/helpers.ts
+
+This should be much cleaner to copy and paste! 🎯
