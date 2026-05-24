@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'ghost';
@@ -8,15 +6,15 @@ interface ButtonProps {
   className?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  variant = 'primary', 
-  href, 
-  onClick, 
-  className = '' 
-}) => {
+export const Button = ({
+  children,
+  variant = 'primary',
+  href,
+  onClick,
+  className = ''
+}: ButtonProps) => {
   const baseClass = variant === 'primary' ? 'btn-primary' : 'btn-ghost';
-  
+
   if (href) {
     return (
       <a href={href} className={`${baseClass} ${className}`}>
@@ -24,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
       </a>
     );
   }
-  
+
   return (
     <button onClick={onClick} className={`${baseClass} ${className}`}>
       {children}

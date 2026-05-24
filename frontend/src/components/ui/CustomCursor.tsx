@@ -3,46 +3,42 @@ import { useEffect, useRef } from 'react';
 export const CustomCursor = () => {
     const cursorRef = useRef<HTMLDivElement>(null);
     const cursorRingRef = useRef<HTMLDivElement>(null);
-    const mouseX = useRef(0);
-    const mouseY = useRef(0);
-    const ringX = useRef(0);
-    const ringY = useRef(0);
+    const mousePos = useRef({ x: 0, y: 0 });
+    const ringPos = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            mouseX.current = e.clientX;
-            mouseY.current = e.clientY;
-
+        const updateMouse = (e: MouseEvent) => {
+            mousePos.current = { x: e.clientX, y: e.clientY };
             if (cursorRef.current) {
-                cursorRef.current.style.left = mouseX.current + 'px';
-                cursorRef.current.style.top = mouseY.current + 'px';
+                cursorRef.current.style.left = `${mousePos.current.x}px`;
+                cursorRef.current.style.top = `${mousePos.current.y}px`;
             }
         };
 
+        let animationFrameId: number;
         const animateRing = () => {
-            ringX.current += (mouseX.current - ringX.current) * 0.12;
-            ringY.current += (mouseY.current - ringY.current) * 0.12;
-
+            ringPos.current.x += (mousePos.current.x - ringPos.current.x) * 0.12;
+            ringPos.current.y += (mousePos.current.y - ringPos.current.y) * 0.12;
             if (cursorRingRef.current) {
-                cursorRingRef.current.style.left = ringX.current + 'px';
-                cursorRingRef.current.style.top = ringY.current + 'px';
+                cursorRingRef.current.style.left = `${ringPos.current.x}px`;
+                cursorRingRef.current.style.top = `${ringPos.current.y}px`;
             }
-
-            requestAnimationFrame(animateRing);
+            animationFrameId = requestAnimationFrame(animateRing);
         };
 
-        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mousemove', updateMouse);
         animateRing();
 
         return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mousemove', updateMouse);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
     return (
         <>
-            <div className="cursor" ref={cursorRef} />
-            <div className="cursor-ring" ref={cursorRingRef} />
+            <div ref={cursorRef} className="cursor" />
+            <div ref={cursorRingRef} className="cursor-ring" />
         </>
     );
 };
