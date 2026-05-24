@@ -24,29 +24,51 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 ## 📁 Project Structure
 src/
 ├── components/
-│ ├── animations/ # Animated background components
-│ ├── cards/ # Reusable card components (Project, Skill, Tool, Testimonial)
-│ ├── layout/ # Layout components (Navbar, Footer, Layout)
-│ ├── sections/ # Page sections (Hero, About, Skills, Projects, etc.)
-│ └── ui/ # UI components (Button, Cursor, ScrollReveal, etc.)
+│   ├── animations/
+│   │   ├── AnimatedBackground.tsx
+│   │   └── OrbAnimation.tsx
+│   ├── cards/
+│   │   ├── ProjectCard.tsx
+│   │   ├── SkillCard.tsx
+│   │   ├── StatCard.tsx
+│   │   ├── TestimonialCard.tsx
+│   │   └── ToolCard.tsx
+│   ├── layout/
+│   │   ├── Footer.tsx
+│   │   ├── Layout.tsx
+│   │   └── Navbar.tsx
+│   ├── sections/
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Testimonials.tsx
+│   │   └── Tools.tsx
+│   └── ui/
+│       ├── Button.tsx
+│       ├── CustomCursor.tsx
+│       ├── GradientText.tsx
+│       ├── ScrollReveal.tsx
+│       └── SectionHeader.tsx
 ├── data/
-│ ├── types.ts # TypeScript interfaces
-│ ├── data.ts # Personal info, stats, tools
-│ ├── projects.ts # Projects data (videos, descriptions, tools)
-│ ├── skills.ts # Skills data
-│ └── testimonials.ts # Testimonials data
+│   ├── types.ts
+│   ├── data.ts
+│   ├── projects.ts
+│   ├── skills.ts
+│   └── testimonials.ts
 ├── hooks/
-│ ├── useMousePosition.ts # Custom cursor tracking
-│ ├── useParallax.ts # Parallax scroll effects
-│ ├── useScrollReveal.ts # Scroll reveal animations
-│ └── useSkillBars.ts # Animated skill bars
+│   ├── useMousePosition.ts
+│   ├── useParallax.ts
+│   ├── useScrollReveal.ts
+│   └── useSkillBars.ts
 ├── styles/
-│ ├── variables.css # CSS variables (colors, fonts)
-│ ├── globals.css # Global styles (components, layout)
-│ └── animations.css # Keyframes and animations
+│   ├── variables.css
+│   ├── globals.css
+│   └── animations.css
 ├── utils/
-│ ├── constants.ts # Site-wide constants
-│ └── helpers.ts # Utility functions
-├── App.tsx # Main app component
-├── main.tsx # Entry point
-└── index.css # CSS entry (imports all styles)
+│   ├── constants.ts
+│   └── helpers.ts
+├── App.tsx
+├── main.tsx
+└── index.css
