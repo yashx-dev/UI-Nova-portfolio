@@ -16,7 +16,7 @@ export const Tools = () => {
 
             <div className="tools-row">
                 {tools.map((tool, index) => (
-                    <ScrollReveal key={tool.id} delay={`delay-${index + 1}` as 'delay-1' | 'delay-2' | 'delay-3'| 'delay-4'}>
+                    <ScrollReveal key={tool.id} delay={`delay-${index + 1}` as 'delay-1' | 'delay-2' | 'delay-3'}>
                         <ToolCard tool={tool} />
                     </ScrollReveal>
                 ))}
