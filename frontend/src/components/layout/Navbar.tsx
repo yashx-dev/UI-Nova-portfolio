@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
     { label: 'Skills', id: 'skills' },
     { label: 'Work', id: 'projects' },
     { label: 'Reviews', id: 'testimonials' },
-    { label: 'Contact', id: 'contact' },
+    
 ];
 
 export const Navbar = () => {
@@ -82,7 +82,6 @@ export const Navbar = () => {
                     {navItems.map((item) => (
                         <li key={item.id}>
                             <button
-                                className="nav-link-btn"
                                 onClick={() => scrollToSection(item.id)}
                             >
                                 {item.label}

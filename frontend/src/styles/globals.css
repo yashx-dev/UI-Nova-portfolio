@@ -124,10 +124,10 @@ nav {
   padding: 0;
 }
 
-.nav-links a {
+.nav-links button {
   font-family: "Jost", sans-serif;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -384,10 +384,10 @@ body.menu-open {
 
 .hero-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(90px, 15vw, 200px);
+  font-size: clamp(90px, 15vw, 150px);
   font-weight: 300;
   line-height: 0.86;
-  letter-spacing: 12px;
+  letter-spacing: 8px;
   text-align: center;
   animation: fadeUp 1s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -408,8 +408,8 @@ body.menu-open {
 }
 
 .hero-subtitle {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(16px, 2vw, 20px);
+  font-family: "Inter", serif;
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 300;
   font-style: italic;
   color: var(--text-muted);
@@ -448,7 +448,7 @@ body.menu-open {
 }
 .stat-num {
   font-family: "Cormorant Garamond", serif;
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 300;
   letter-spacing: 3px;
   background: linear-gradient(135deg, #fff, var(--accent));
@@ -532,7 +532,7 @@ body.menu-open {
 }
 .section-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(42px, 6vw, 76px);
+  font-size: clamp(42px, 6vw, 65px);
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: 2px;
@@ -552,7 +552,7 @@ body.menu-open {
   background: var(--accent);
   color: #0f0f0f;
   font-family: "Jost", sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   border: none;
   border-radius: 100px;
@@ -587,7 +587,7 @@ body.menu-open {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   font-family: "Jost", sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   border: 1px solid var(--glass-border);
   border-radius: 100px;
@@ -614,7 +614,7 @@ body.menu-open {
 .about-desc {
   color: var(--text-muted);
   line-height: 1.8;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   margin-bottom: 32px;
 }
@@ -625,7 +625,7 @@ body.menu-open {
 }
 .tag {
   padding: 8px 16px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   border: 1px solid var(--glass-border);
   border-radius: 100px;
@@ -779,7 +779,7 @@ body.menu-open {
   margin-bottom: 8px;
 }
 .skill-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -808,6 +808,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   padding: 36px 40px;
   background: var(--glass);
@@ -818,6 +819,8 @@ body.menu-open {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  height: 255px;
+  width: 220px;
 }
 .tool-card::before {
   content: "";
@@ -1158,6 +1161,8 @@ body.menu-open {
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 370px;
+  height: 220px;
 }
 .testimonial-card::before {
   content: "";
@@ -1178,15 +1183,8 @@ body.menu-open {
   border-color: rgba(77, 163, 255, 0.3);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
-.quote-mark {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 80px;
-  line-height: 0.7;
-  color: rgba(77, 163, 255, 0.2);
-  margin-bottom: 16px;
-}
 .testimonial-text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.75;
   color: var(--text-muted);
   margin-bottom: 24px;
@@ -1229,7 +1227,46 @@ body.menu-open {
   letter-spacing: 2px;
   margin-bottom: 16px;
 }
+/* Line clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* ─── CONTACT SECTION ─── */
 .contact-grid {
   display: grid;
@@ -1536,7 +1573,7 @@ footer {
 
   /* Mobile aspect ratio adjustments */
   .project-thumb.aspect-9-16 {
-    max-height: 70vh;
+    max-height: 60vh;
   }
   .project-thumb.aspect-1-1 {
     max-width: 80%;

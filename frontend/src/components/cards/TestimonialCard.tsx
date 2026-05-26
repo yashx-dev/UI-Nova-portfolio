@@ -10,8 +10,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
       <div className="stars">
         {'★'.repeat(testimonial.rating)}
       </div>
-      <div className="quote-mark">"</div>
-      <p className="testimonial-text">{testimonial.content}</p>
+      <p className="testimonial-text line-clamp-2">{testimonial.content}</p>
       <div className="testimonial-author">
         <div className="author-avatar">{testimonial.avatarInitials}</div>
         <div>

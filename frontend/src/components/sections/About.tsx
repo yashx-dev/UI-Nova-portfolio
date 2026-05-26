@@ -7,9 +7,9 @@ export const About = () => {
         <div className="section-wrap" id="about">
             <div className="about-grid">
                 <ScrollReveal>
-                    <div className="section-eyebrow">About Me</div>
-                    <h2 className="section-title" style={{ marginBottom: '24px' }}>
-                        Crafting Motion<br />with <GradientText>Purpose</GradientText>
+                    <div className="section-eyebrow " style={{ marginBottom: '35px' }}>About Me</div>
+                    <h2 className="section-title" style={{ marginBottom: '30px' }}>
+                        Crafting Motion with <GradientText>Purpose</GradientText>
                     </h2>
                     <p className="about-desc">{personalInfo.description.split('\n\n')[0]}</p>
                     <p className="about-desc" style={{ marginBottom: '28px' }}>

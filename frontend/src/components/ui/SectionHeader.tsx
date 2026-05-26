@@ -16,7 +16,8 @@ export const SectionHeader = ({
     delay = 'delay-1'
 }: SectionHeaderProps) => {
     return (
-        <ScrollReveal delay={delay}>
+        <div style={{marginBottom: '3rem'}}>
+        <ScrollReveal delay={delay} >
             {eyebrow && (
                 <div className={`section-eyebrow ${noLine ? 'no-line' : ''} ${centered ? 'justify-center' : ''}`}>
                     {eyebrow}
@@ -26,5 +27,6 @@ export const SectionHeader = ({
                 {title}
             </h2>
         </ScrollReveal>
+        </div>
     );
 };

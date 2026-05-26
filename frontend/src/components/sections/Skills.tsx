@@ -58,7 +58,7 @@ export const Skills = () => {
     >
       <SectionHeader
         eyebrow="Expertise"
-        title="What I Do Best"
+        title="What I do Best"
         noLine
         centered
         delay="delay-1"

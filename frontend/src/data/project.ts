@@ -17,7 +17,7 @@ export const projects: Project[] = [
     title: "Vertical Reel — Instagram",
     category: "Social Media",
     description: "High-retention vertical reel for Instagram...",
-    videoUrl: "/videos/vertical-reel.mp4",
+    videoUrl: "https://www.youtube.com/shorts/LgrKQpkkybk",
     tools: ["Premiere Pro", "After Effects"],
     aspectRatio: "9:16",  // Vertical for TikTok/Instagram/YouTube Shorts
     duration: "0:28"
