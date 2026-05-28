@@ -1,83 +1,100 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import type { Project } from '../../data/types';
+import { VideoModal } from '../ui/VideoModal';
+import { Play, ExternalLink } from 'lucide-react'; // or use your own icons
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const togglePlay = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
+  const handleCardClick = () => {
+    setIsModalOpen(true);
   };
 
-  const getAspectClass = () => {
-    switch(project.aspectRatio) {
-      case '9:16': return 'aspect-9-16';
-      case '1:1': return 'aspect-1-1';
-      case '4:3': return 'aspect-4-3';
-      case '21:9': return 'aspect-21-9';
-      default: return '';
-    }
+  const handleExternalClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent modal from opening
+    window.open(project.externalUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className={`project-card ${project.featured ? 'featured' : ''}`}>
+    <>
       <div 
-        className={`project-thumb relative cursor-pointer group ${getAspectClass()}`}
-        data-aspect={project.aspectRatio || '16:9'}
+        className={`project-card ${project.featured ? 'project-card--featured' : ''}`}
+        onClick={handleCardClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleCardClick();
+          }
+        }}
+        aria-label={`View ${project.title} video preview`}
       >
-        <video
-          ref={videoRef}
-          src={project.videoUrl}
-          className="absolute inset-0 w-full h-full object-cover"
-          poster={project.thumbnailUrl}
-          onEnded={() => setIsPlaying(false)}
-        />
-        
-        <div className="thumb-grid"></div>
-        <div className="thumb-glow tg1"></div>
-        <div className="thumb-glow tg2"></div>
-        
-        <div className="play-btn z-10 relative" onClick={togglePlay}>
-          {isPlaying ? '⏸' : '▶'}
-        </div>
-        
-        {project.featured && (
-          <span className="project-label z-10">{project.category}</span>
-        )}
-      </div>
-      
-      <div className="project-info">
-        <div className="project-category">{project.category}</div>
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-desc">{project.description}</p>
-        
-        {project.duration && (
-          <div className="text-sm text-gray-400 mb-4">
-            Duration: {project.duration}
+        {/* Thumbnail Section */}
+        <div className="project-card__media">
+          <img 
+            src={project.thumbnail} 
+            alt={project.title}
+            className="project-card__thumbnail"
+            loading="lazy"
+          />
+          
+          {/* Play Button Overlay */}
+          <div className="project-card__play-overlay">
+            <div className="project-card__play-button">
+              <Play size={24} fill="currentColor" />
+            </div>
           </div>
-        )}
-        
-        <div className="project-meta">
-          <div className="project-tools">
-            {project.tools.map((tool) => (
-              <span key={tool} className="tool-pill">{tool}</span>
-            ))}
+
+          {/* Featured Badge */}
+          {project.featured && (
+            <span className="project-card__badge">Featured</span>
+          )}
+        </div>
+
+        {/* Content Section */}
+        <div className="project-card__content">
+          <span className="project-card__category">{project.category}</span>
+          
+          <h3 className="project-card__title">{project.title}</h3>
+          
+          <p className="project-card__description">{project.description}</p>
+
+          {project.duration && (
+            <span className="project-card__duration">{project.duration}</span>
+          )}
+
+          {/* Tools & External Link */}
+          <div className="project-card__footer">
+            <div className="project-card__tools">
+              {project.tools.map((tool) => (
+                <span key={tool} className="project-card__tool-tag">{tool}</span>
+              ))}
+            </div>
+            
+            <button
+              className="project-card__external-link"
+              onClick={handleExternalClick}
+              aria-label={`Open ${project.title} external link`}
+              title="Open external link"
+            >
+              <ExternalLink size={18} />
+            </button>
           </div>
-          <div className="project-arrow">→</div>
         </div>
       </div>
-    </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        videoUrl={project.modalVideoUrl}
+        title={project.title}
+      />
+    </>
   );
 };

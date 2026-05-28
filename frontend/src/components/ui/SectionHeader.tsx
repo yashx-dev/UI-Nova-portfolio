@@ -5,7 +5,7 @@ interface SectionHeaderProps {
     title: string;
     noLine?: boolean;
     centered?: boolean;
-    delay?: 'delay-1' | 'delay-2' | 'delay-3';
+    delay?: 'delay-1' | 'delay-2' | 'delay-3' | 'delay-4' | 'delay-5';
 }
 
 export const SectionHeader = ({
@@ -16,8 +16,8 @@ export const SectionHeader = ({
     delay = 'delay-1'
 }: SectionHeaderProps) => {
     return (
-        <div style={{marginBottom: '3rem'}}>
-        <ScrollReveal delay={delay} >
+        <div style={{ marginBottom: '3rem' }}>
+        <ScrollReveal delay={delay}>
             {eyebrow && (
                 <div className={`section-eyebrow ${noLine ? 'no-line' : ''} ${centered ? 'justify-center' : ''}`}>
                     {eyebrow}

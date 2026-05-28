@@ -1,5 +1,3 @@
-// Shared interfaces used by ALL data files
-
 export interface PersonalInfo {
   name: string;
   role: string;
@@ -30,13 +28,18 @@ export interface Project {
   title: string;
   category: string;
   description: string;
-  videoUrl?: string; // Optional - for video support
-  thumbnailUrl?: string; // Optional - fallback image
+  thumbnail: string;
+  modalVideoUrl: string;
+  externalUrl: string;
   tools: string[];
   featured?: boolean;
   duration?: string;
-  year?: number;
-  aspectRatio?: "16:9" | "9:16" | "1:1" | "4:3" | "21:9";
+}
+export interface VideoModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  videoUrl: string;
+  title: string;
 }
 
 export interface Stat {
