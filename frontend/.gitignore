@@ -7,19 +7,90 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Runtime
+node_modules/
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+.public/
+.cache/
+.cache-loader/
+.parcel-cache/
+.vite/
+.svelte-kit/
+.astro/dist/
+
+# Environment
+.env
+.env.*.local
+.env.local
+.env.development
+.env.test
+.env.production
+!.env.example
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency managers / package tools
+.pnp/
+.pnp.js
+.pnp.cjs
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarnrc.yml
+
+# Tests / Coverage
+coverage/
+coverage-final.json
+.nyc_output/
+jest-test-results.json
+test-results.xml
+playwright-report/
+cypress/videos/
+cypress/screenshots/
+
+# Build & bundler artifacts
+*.tgz
+*.zip
+storybook-static/
+dist-ssr/
+
+# Misc
+reports/
+*.local
+*.log.*
+.sass-cache/
+.cache/
+
+/firebase/
+.vercel/
+.now/
+.envrc
+.DS_Store?
+*.pem
+
+# Ignore gitignored files accidentally added
 .gitignore
+
+# Keep examples, samples and config templates
+!.env.example

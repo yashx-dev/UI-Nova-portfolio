@@ -62,7 +62,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           
           <h3 className="project-card__title">{project.title}</h3>
           
-          <p className="project-card__description">{project.description}</p>
+          <p className="project-card__description line-clamp-1">{project.description}</p>
 
           {project.duration && (
             <span className="project-card__duration">{project.duration}</span>

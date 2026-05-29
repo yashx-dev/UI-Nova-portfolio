@@ -7,7 +7,7 @@ export const projects: Project[] = [
     category: "APPLE UI STYLE",
     description: "A full product launch video crafted in Apple's iconic style — clean transitions, precise typography animations, and an atmospheric score that builds anticipation to the reveal.",
     thumbnail: "/images/thumbnails/saas-thumb.jpg",
-    modalVideoUrl: "/videos/saas-launch.mp4",
+    modalVideoUrl: "https://youtu.be/3044x8Z_Z3g",
     externalUrl: "https://youtube.com/watch?v=example1",
     tools: ["After Effects", "Premiere Pro", "Figma"],
     featured: true,
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     category: "SOCIAL MEDIA",
     description: "High-retention vertical reel for Instagram with punchy transitions and trending audio.",
     thumbnail: "/images/thumbnails/reel-thumb.jpg",
-    modalVideoUrl: "/videos/reel-preview.mp4",
+    modalVideoUrl: "https://youtube.com/shorts/mWAuEZylmvY",
     externalUrl: "https://instagram.com/p/example2",
     tools: ["Premiere Pro", "After Effects"],
     duration: "0:28"
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     category: "MOTION GRAPHICS",
     description: "Clean square format animation for social posts and brand identity.",
     thumbnail: "/images/thumbnails/logo-thumb.jpg",
-    modalVideoUrl: "/videos/logo-animation.mp4",
+    modalVideoUrl: "https://youtube.com/shorts/gurEjqaKdYg",
     externalUrl: "https://behance.net/gallery/example3",
     tools: ["After Effects"],
     duration: "0:15"
