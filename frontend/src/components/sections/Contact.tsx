@@ -3,22 +3,20 @@ import emailjs from '@emailjs/browser';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { GradientText } from '../ui/GradientText';
 import { personalInfo } from '../../data/data';
-import { 
-  FiMail, 
-  FiClock, 
-  FiMapPin, 
-  FiSend, 
-  FiCheck, 
+import {
+  FiMail,
+  FiClock,
+  FiMapPin,
+  FiSend,
+  FiCheck,
   FiLoader,
-  FiAlertCircle 
+  FiAlertCircle
 } from 'react-icons/fi';
-import { 
-  FaInstagram, 
-  FaLinkedinIn, 
-  FaBehance, 
+import {
+  FaInstagram,
+  FaLinkedinIn,
   FaYoutube,
-  FaGithub,
-  FaXTwitter 
+  FaXTwitter
 } from 'react-icons/fa6';
 
 interface FormData {
@@ -50,18 +48,18 @@ export const Contact = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    
+
     // Enforce message length limit
     if (name === 'message' && value.length > MAX_MESSAGE_LENGTH) {
       return;
     }
-    
+
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus({
@@ -126,15 +124,15 @@ export const Contact = () => {
 
     } catch (error) {
       console.error('Failed to send email:', error);
-      
+
       let errorMessage = 'Failed to send message. Please try again later.';
-      
+
       if (error instanceof Error) {
         if (error.message.includes('configuration')) {
           errorMessage = error.message;
         }
       }
-      
+
       setStatus({
         type: 'error',
         message: errorMessage,
@@ -148,39 +146,27 @@ export const Contact = () => {
   };
 
   const socialLinks = [
-    { 
-      icon: FaInstagram, 
-      href: '#', 
+    {
+      icon: FaInstagram,
+      href: 'https://www.instagram.com/uinova.fx/',
       label: 'Instagram',
       color: 'hover:bg-gradient-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-500'
     },
-    { 
-      icon: FaLinkedinIn, 
-      href: '#', 
+    {
+      icon: FaLinkedinIn,
+      href: '#',
       label: 'LinkedIn',
       color: 'hover:bg-blue-600'
     },
-    { 
-      icon: FaBehance, 
-      href: '#', 
-      label: 'Behance',
-      color: 'hover:bg-blue-700'
-    },
-    { 
-      icon: FaYoutube, 
-      href: '#', 
+    {
+      icon: FaYoutube,
+      href: '#',
       label: 'YouTube',
       color: 'hover:bg-red-600'
     },
-    { 
-      icon: FaGithub, 
-      href: '#', 
-      label: 'GitHub',
-      color: 'hover:bg-gray-800'
-    },
-    { 
-      icon: FaXTwitter, 
-      href: '#', 
+    {
+      icon: FaXTwitter,
+      href: '#',
       label: 'X (Twitter)',
       color: 'hover:bg-gray-900'
     },
@@ -199,10 +185,10 @@ export const Contact = () => {
               Let's <GradientText>Connect</GradientText>
             </h2>
             <p className="contact-desc">
-              Have a question, idea, or just want to chat? I'm always open to discussing 
+              Have a question, idea, or just want to chat? I'm always open to discussing
               new projects, creative opportunities, or ways to collaborate.
             </p>
-            
+
             <div className="contact-info">
               <div className="contact-item">
                 <div className="contact-icon">
@@ -259,7 +245,7 @@ export const Contact = () => {
         <ScrollReveal delay="delay-2">
           <div className="contact-form-wrap">
             <div className="form-title">Send a Message</div>
-            
+
             <form ref={formRef} onSubmit={handleSubmit} noValidate>
               {/* Name & Email Row */}
               <div className="form-row">

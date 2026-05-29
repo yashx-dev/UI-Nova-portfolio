@@ -1,3 +1,4 @@
+import { SiFigma } from 'react-icons/si';
 import type { Tool } from '../../data/types';
 
 interface ToolCardProps {
@@ -15,9 +16,23 @@ export const ToolCard = ({ tool }: ToolCardProps) => {
     }
   };
 
+  const renderLogo = () => {
+    if (tool.name === 'Figma') {
+      return (
+        <div className={`tool-logo ${getLogoClass()}`}>
+          <SiFigma size={32} color="#ffffff" />
+        </div>
+      );
+    }
+    
+    return (
+      <div className={`tool-logo ${getLogoClass()}`}>{tool.logo}</div>
+    );
+  };
+
   return (
     <div className="tool-card">
-      <div className={`tool-logo ${getLogoClass()}`}>{tool.logo}</div>
+      {renderLogo()}
       <div className="tool-name">{tool.name}</div>
       <div className="tool-sub">{tool.category}</div>
     </div>

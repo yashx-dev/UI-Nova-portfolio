@@ -49,7 +49,7 @@ export const tools: Tool[] = [
   {
     id: 3,
     name: "Figma",
-    logo: "✦",
+    logo: "F",
     category: "UI / Motion"
   },
   {
